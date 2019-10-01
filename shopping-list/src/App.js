@@ -6,15 +6,34 @@ class App extends React.Component {
     super();
 
     this.state = {
-      title: 'Hello World'
-    }
+      title: 'Hello World',
+      count: 0
+    };
+  }
+
+  alertTime = () => {
+    alert(this.state.title);
+  }
+
+  increment = () => {
+    this.setState(
+      (prevState) => {
+        return { count: prevState.count + 1 }
+      },
+    () => console.log(this.state.count)
+    )
+    this.setState(prevState => {
+      return { count: prevState.count + 1 }
+    })
   }
 
   render() {
     return (
       <div className="App">
         <h1>{this.state.title}</h1>
-        <h2>Start some magic</h2>
+        <h2>{this.state.count}</h2>
+        <button onClick={this.alertTime}>what time is it?</button>
+        <button onClick={this.increment}>Increment</button>
       </div>
     );
   }
