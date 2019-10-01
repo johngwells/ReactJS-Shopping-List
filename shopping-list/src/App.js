@@ -13,19 +13,19 @@ class App extends React.Component {
 
   alertTime = () => {
     alert(this.state.title);
-  }
+  };
 
   increment = () => {
     this.setState(
-      (prevState) => {
+      prevState => {
         return { count: prevState.count + 1 }
       },
     () => console.log(this.state.count)
-    )
+    );
     this.setState(prevState => {
       return { count: prevState.count + 1 }
-    })
-  }
+    });
+  };
 
   render() {
     return (
